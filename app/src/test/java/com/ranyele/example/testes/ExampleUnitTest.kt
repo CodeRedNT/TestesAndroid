@@ -20,7 +20,20 @@ class ExampleUnitTest {
     }
 
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun testeValorNegativo() {
+        val result : Boolean? = SUT?.isPositive(-1)
+        assertEquals(result, false)
+    }
+
+    @Test
+    fun testeValorZerado() {
+        val result : Boolean? = SUT?.isPositive(0)
+        assertEquals(result, false)
+    }
+
+    @Test
+    fun testeValorPositivo() {
+        val result : Boolean? = SUT?.isPositive(7)
+        assertEquals(result, true)
     }
 }
